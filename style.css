@@ -7,19 +7,16 @@
 html, body{
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #page1{
     padding: 0 2vw;
-    height: 100vh;
+    min-height: 100vw;
     width: 100vw;
     background: #EFEAE3;
     position: relative;
     border-bottom: 2px solid rgba(0, 0, 0, 0.205);
-
+    z-index: 1;
 }
 
 nav{
@@ -94,4 +91,240 @@ nav{
     font-size: 10vw;
     line-height: 8vw;
     text-align: right;
+}
+
+#page1 video{
+    width: 92%;
+    border-radius: 30px;
+    margin-top: 5vw;
+    position: absolute;
+    margin-left: 2vw;
+    z-index: 0;
+}
+
+#hero-shape{
+    position: absolute;
+    height: 36vw;
+    width: 46vw;
+    right: 0;
+    top: 43vw;
+}
+#hero1{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+}
+#hero2{
+    height: 30vw;
+    width: 30vw;
+    background-color: linear-gradient(45deg, red, orange);
+    border-radius: 50%;
+    filter: blur(25px);
+    position: absolute;
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+#hero3{
+    height: 30vw;
+    width: 30vw;
+    background-color: red;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: anime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes anime{
+    from{
+        transform: translate(55%, -5%);
+
+    }
+    to{
+        transform: translate(-10%, 30%);
+    }
+}   
+
+@keyframes anime1{
+    from{
+        transform: translate(5%, -5%);
+
+    }
+    to{
+        transform: translate(-20%, 30%);
+    }
+}   
+
+#page2{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #EFEAE3;
+    position: relative;
+    padding-top: 8vw;
+}
+
+#moving-text {
+    white-space: nowrap;     /* Keep in one line */
+    overflow: hidden;        /* Hide extra */
+    width: 96%;
+    margin: 2vw;
+}
+
+.con {
+    display: inline-block;   /* Keep next to each other */
+    animation: scroll 15s linear infinite;
+}
+
+#moving-text h1 {
+    font-size: 6vw;
+    display: inline-block;
+    margin: 0 1vw;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2vw;
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#page2-bottom{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw;
+    position: relative;
+    z-index: 5;
+    
+}
+#page2-bottom h1{
+    font-size: 3.7vw;
+    width: 70%;
+}
+.bottom2{
+    width: 20%;
+}
+
+#page2-bottom img{
+    width: 100%;
+    border-radius: 15px;
+}
+#page2-bottom p{
+    font-size: 1.2vw;
+    margin-top: 2vw;
+    font-weight: 400;
+}
+
+#page2 .globe{
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    background: linear-gradient(to top, red, rgb(255, 77, 0));
+    top: 63%;
+    left: 25%;
+    position: absolute;
+    filter: blur(30px);
+    animation-name: globe-anime;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes globe-anime{
+    from{
+        transform: translate(10%,-10%) skew(0);
+    }
+    to{
+        transform: translate(-10%,10%) skew(10deg);
+    }
+}
+
+.page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 4vw 0;
+}
+
+.elem{
+    height: 150px;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.128);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+.elem h1{
+    font-size: 3vw;
+    z-index: 2;
+}
+.elem .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    left: 0;
+    top: -100%;
+}
+.elem:hover .overlay{
+    top: 0;
+    transition: all 0.2s ease;
+}
+
+.images{
+    position: fixed;
+    height: 30vw;
+    width: 24vw;
+    top: 25%;
+    left: 50%;  
+    z-index: 10;
+    background-color: red;
+    display: none;
+}
+
+.feature{
+    display: flex;
+    align-items: start;
+    gap: 1vw;
+    padding: 0 2vw;
+    margin-bottom: 2vw;
+}
+.feature .circle1{
+    height: 0.7vw;
+    width: 0.7vw;
+    background-color: red;
+    border-radius: 50%;
+    margin-top: 1.4vw;
+}
+.feature p{
+    font-size: 1.3vw;
+    font-weight: 200;
+    margin-top: 1vw;
 }
